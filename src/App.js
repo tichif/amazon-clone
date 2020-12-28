@@ -4,15 +4,22 @@ import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
 import Checkout from './components/Checkout';
+import Login from './components/Login';
 
 function App() {
   return (
     <Router>
       <div className='app'>
-        <Header />
         <Switch>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/checkout' component={Checkout} />
+          <Route exact path='/'>
+            <Header />
+            <Home />
+          </Route>
+          <Route exact path='/checkout'>
+            <Header />
+            <Checkout />
+          </Route>
+          <Route exact path='/login' component={Login} />
         </Switch>
       </div>
     </Router>
